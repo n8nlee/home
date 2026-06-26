@@ -33,7 +33,7 @@ enableEmoji = true
   description = "A modern, beautiful, and easily configurable blog theme for Hugo."
   favicon = "/img/favicon.ico?v=20260606"
   logo = "/img/logo.png"
-  mainSections = ["blog", "project", "research", "teaching", "contact", "talk"]
+  mainSections = ["blog", "project", "research", "contact", "talk"]
   navallcaps = true
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
@@ -114,11 +114,6 @@ enableEmoji = true
     title = "Research"
     url = "/research/"
     weight = 4
-  [[menu.header]]
-    name = "Teaching"
-    title = "Teaching"
-    url = "/teaching/"
-    weight = 5
   [[menu.header]]
     name = "Service"
     title = "Service"
