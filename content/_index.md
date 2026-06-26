@@ -7,7 +7,7 @@ subtitle: "Florida International University, Miami, FL"
 description: "I study how complex engineering systems behave, from tiny particles in granular materials to full-scale structures, using simulation, AI, and a healthy amount of curiosity."
 date: 2026-04-23T12:27:33-06:00
 images:
-  - img/hello.svg
+  - img/me2015.jpg
 image_left: true
 text_align_left: true
 show_social_links: true # specify social accounts in site config
