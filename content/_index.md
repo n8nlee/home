@@ -1,6 +1,6 @@
 ---
-title: "Seung Jae Lee, Ph.D."
-role: "Associate Professor and Undergraduate Program Director"
+title: "Nathan H. Lee"
+role: "James M. Johnston Scholar"
 department: "Dept. of Civil and Environmental Engineering"
 college: "College of Engineering and Computing"
 subtitle: "Florida International University, Miami, FL"
