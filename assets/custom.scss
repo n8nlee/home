@@ -1,0 +1,70 @@
+body {
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 60em) {
+  .home-title {
+    font-size: 3.25rem;
+  }
+
+  .home-text-column {
+    width: 58%;
+  }
+
+  .home-image-column {
+    width: 42%;
+  }
+
+  .home-image-column img {
+    max-width: 119%;
+  }
+}
+
+.home-role {
+  @extend .#{$headingColor};
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+.about-profile-image {
+  max-width: 16rem;
+  width: 100%;
+}
+
+.social-icon-links a {
+  align-items: center;
+  display: inline-flex;
+  height: 1.4rem;
+  justify-content: center;
+  width: 0.8rem;
+}
+
+.social-icon-links a i {
+  text-align: center;
+  width: 1.0em;
+}
+
+.research-intro {
+  max-width: 48rem;
+  white-space: pre-line;
+}
+
+.research-lab-statement {
+  max-width: 56rem;
+}
+
+.research-profile-link {
+  border: 1px solid #8a1f1f;
+  color: #8a1f1f;
+  line-height: 1.2;
+}
+
+.research-profile-link:hover,
+.research-profile-link:focus {
+  background-color: #8a1f1f;
+  color: #fff;
+}
+
+.service-bold-link {
+  font-weight: 900 !important;
+  text-shadow: 0.01em 0 currentColor;
+}

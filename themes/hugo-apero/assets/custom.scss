@@ -1,0 +1,15 @@
+// Override this file to add your own SCSS styling.
+
+.post-body,
+.page-body {
+  font-size: 1rem;
+}
+
+.latest-news-item {
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover .latest-news-item {
+  background-color: rgba(240, 237, 209, 0.25);
+  transform: translateX(4px);
+}

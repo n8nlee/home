@@ -1,0 +1,221 @@
+{{ define "main" }}
+<main class="page-main pa4 research-detail" role="main">
+  <style>
+    .research-detail {
+      --research-entry-line-height: 1.55;
+    }
+
+    .research-detail .page-content {
+      max-width: 80rem;
+    }
+
+    .research-detail .post-header h1 {
+      max-width: none;
+    }
+
+    .research-detail .post-body h2 {
+      font-size: 1.5rem;
+      line-height: 1.25;
+      font-weight: 700;
+      clear: both;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .research-detail .post-body p {
+      line-height: var(--research-entry-line-height);
+    }
+
+    .research-detail .post-body p:has(> img) {
+      clear: left;
+      margin: 0;
+    }
+
+    .research-detail .post-body p:has(> img):not(:first-of-type) {
+      margin-top: 2rem;
+    }
+
+    .research-detail .post-body p:has(> img) img {
+      display: block;
+      float: left;
+      width: 30%;
+      height: auto;
+      margin: 0 2rem 1.5rem 0;
+    }
+
+    .research-detail .post-body p:has(> img) + p {
+      min-height: 8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .research-detail .post-body figure.research-image-with-caption {
+      clear: left;
+      float: left;
+      width: 30%;
+      margin: 0 2rem 1rem 0;
+    }
+
+    .research-detail .post-body figure.research-image-with-caption img {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0;
+    }
+
+    .research-detail .post-body figure.research-image-with-caption figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      line-height: 1.35;
+      font-style: italic;
+    }
+
+    .research-detail .post-body .research-entry-with-caption {
+      clear: both;
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .research-detail .post-body .research-entry-with-caption figure.research-image-with-caption {
+      clear: none;
+      float: none;
+      flex: 0 0 30%;
+      width: 30%;
+      margin: 0;
+    }
+
+    .research-detail .post-body .research-entry-with-caption .research-entry-text {
+      flex: 1 1 auto;
+      line-height: var(--research-entry-line-height);
+    }
+
+    .research-detail .post-body .research-entry-with-caption .research-entry-text p {
+      margin-top: 0;
+    }
+
+    .research-detail .post-body .research-entry-with-caption .research-entry-text strong:first-child {
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+
+    .research-detail .post-body .research-entry-with-caption .research-entry-text strong:first-child + br {
+      display: none;
+    }
+
+    .research-detail .post-body .research-entry-with-caption .research-entry-text strong:first-child + br + a {
+      display: block;
+      margin-top: 0;
+      margin-bottom: 0.05rem;
+      font-size: 0.95em;
+    }
+
+    .research-detail .post-body .research-entry-with-caption .research-entry-text strong:first-child + br + a + br {
+      display: none;
+    }
+
+    .research-detail .post-body p:has(> img) + p > strong:first-child {
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+
+    .research-detail .post-body p:has(> img) + p > strong:first-child + br {
+      display: none;
+    }
+
+    .research-detail .post-body p:has(> img) + p > strong:first-child + br + a {
+      display: block;
+      margin-top: 0;
+      margin-bottom: 0.05rem;
+      font-size: 0.95em;
+    }
+
+    .research-detail .post-body p:has(> img) + p > strong:first-child + br + a + br {
+      display: none;
+    }
+
+    .research-detail .post-body p + h2 {
+      margin-top: 2.5rem;
+    }
+
+    .research-detail .post-body hr + h2 {
+      margin-top: 0;
+    }
+
+    .research-detail .post-body hr {
+      clear: both;
+      border: 0;
+      border-bottom: 1px solid rgba(112, 0, 0, 0.25);
+      margin: 3rem 0 3rem;
+    }
+
+    @media (max-width: 48rem) {
+      .research-detail .post-body p:has(> img) img {
+        float: none;
+        width: 100%;
+        margin: 0 0 1rem;
+      }
+
+      .research-detail .post-body p:has(> img) + p {
+        min-height: 0;
+        margin-bottom: 2rem;
+      }
+
+      .research-detail .post-body figure.research-image-with-caption {
+        float: none;
+        width: 100%;
+        margin: 0 0 1rem;
+      }
+
+      .research-detail .post-body .research-entry-with-caption {
+        display: block;
+        margin-bottom: 2rem;
+      }
+
+      .research-detail .post-body .research-entry-with-caption figure.research-image-with-caption {
+        width: 100%;
+        margin: 0 0 1rem;
+      }
+
+      .research-detail .post-body p + h2 {
+        margin-top: 2rem;
+      }
+
+      .research-detail .post-body hr + h2 {
+        margin-top: 0;
+      }
+
+      .research-detail .post-body hr {
+        margin: 2.5rem 0 2.25rem;
+      }
+    }
+  </style>
+  <section class="page-content center">
+    <article class="post-content pa0 ph4-l">
+      <header class="post-header">
+        <h1 class="f2 lh-solid mb3 fw4">{{ .Title }}</h1>
+        {{ if .Params.subtitle }}<h4 class="f4 mt0 mb4 lh-title measure">{{ .Params.subtitle }}</h4>{{ end }}
+        {{ if .Params.show_author_byline }}<p class="f6 measure lh-copy mv1">{{ if .Params.author }}By {{ .Params.author }}{{ end }}{{ with .Params.categories }} in{{ range . }} <a href="{{ "categories/" | absURL }}{{ . | urlize }}">{{ . }}</a> {{ end }}{{ end }}</p>{{ end }}
+        {{ if .Params.show_post_date }}<p class="f7 db mv0 ttu">{{ .PublishDate.Format "January 2, 2006" }}</p>{{ end }}
+
+        {{ if .Params.links }}
+        <div class="ph0 pt5">
+          {{ partial "shared/btn-links.html" . }}
+        </div>
+        {{ end }}
+      </header>
+      <section class="post-body pt4 pb4">
+        {{ .Content }}
+        {{ .Scratch.Set "details" "closed" }}
+        {{ partial "shared/post-details.html" . }}
+      </section>
+      <footer class="post-footer">
+        {{ partial "shared/post-pagination.html" . }}
+      </footer>
+    </article>
+    {{ if .Params.show_comments }}
+      {{ partial "shared/comments.html" . }}
+    {{ end }}
+  </section>
+</main>
+{{ end }}

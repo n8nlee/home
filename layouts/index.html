@@ -1,0 +1,72 @@
+{{ define "main" }}
+{{ $page := . }}
+<main class="page-main pa4" role="main">
+  <section class="page-content mw9 center">
+    <div class="flex-l items-center" style="{{ if .Params.image_left }}flex-direction: row-reverse;{{ end }}">
+      <div class="home-text-column mh4 w-50-l {{ if not .Params.text_align_left }}tr{{ end }}">
+        {{ with .Params.title }}<h1 class="home-title f2 f1-m f-subheadline-l fw5-ns mv4 lh-solid">{{ . }}</h1>{{ end }}
+        {{ with .Params.role }}<p class="home-role f3 fw4 mt0 mb3">{{ . }}</p>{{ end }}
+        {{ with .Params.department }}<h2 class="f5 fw7 mt0 mb3 ttu tracked">{{ . }}</h2>{{ end }}
+        {{ with .Params.college }}<h2 class="f5 fw7 mt0 mb3 ttu tracked">{{ . }}</h2>{{ end }}
+        {{ with .Params.subtitle }}<h3 class="f5 fw7 mt0 mb4 ttu tracked">{{ . }}</h3>{{ end }}
+        {{ if .Params.show_social_links }}{{ partial "shared/social-links.html" . }}{{ end }}
+        {{ with .Params.description }}<p class="f4 mt4 lh-copy">{{ . | markdownify }}</p>{{ end }}
+        {{ if .Params.show_action_link }}<a class="mt4 action {{ .Params.action_type }}" href="{{ .Params.action_link | relURL }}">{{ .Params.action_label | safeHTML }}</a>{{ end }}
+      </div>
+      <div class="home-image-column w-50-l {{ if .Params.image_left }}ml4{{ else }}mr4{{ end }}">
+        <div class="w-100 flex justify-center {{ if .Params.image_left }}justify-center{{ else }}justify-end-l{{ end }}">
+      {{ with .Params.images }}
+        {{ $resolvedImages := slice }}
+        {{ range . }}
+          {{ $resolvedImages = $resolvedImages | append (. | relURL) }}
+        {{ end }}
+        {{ $firstImage := index $resolvedImages 0 }}
+        <img
+          class="mv0 w-70-m"
+          src="{{ $firstImage }}"
+          data-random-image="true"
+          data-image-options='{{ $resolvedImages | jsonify }}'
+          alt="{{ $.Title }}"
+        />
+        <script>
+          (function() {
+            var imageEl = document.querySelector('[data-random-image="true"]');
+            if (!imageEl) return;
+            try {
+              var options = JSON.parse(imageEl.getAttribute('data-image-options') || '[]');
+              if (!Array.isArray(options) || options.length === 0) return;
+              var randomIndex = Math.floor(Math.random() * options.length);
+              var chosen = options[randomIndex];
+              if (chosen) imageEl.src = chosen;
+            } catch (error) {
+              console.warn('Unable to randomize homepage image.', error);
+            }
+          })();
+        </script>
+      {{ end }}
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ with .Params.news_items }}
+  <section class="page-content mw9 center mt5">
+    <div class="mh4">
+      <h2 class="f2 fw4 mt0 mb4">{{ $.Params.news_heading | default "Latest News" }}</h2>
+      <div>
+        {{ range . }}
+          {{ $url := .url }}
+          {{ $external := and $url (or (hasPrefix $url "http://") (hasPrefix $url "https://")) }}
+          {{ if $url }}<a class="db no-underline inherit" href="{{ $url }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>{{ end }}
+          <article class="pv3 bb b--custom-border-color latest-news-item">
+            <p class="f7 fw7 ttu tracked mb2 mt0">{{ .date }}</p>
+            <h3 class="f3 fw4 mt0 mb2">{{ .title }}</h3>
+            <p class="f5 lh-copy mv0 measure-wide">{{ .description | markdownify }}</p>
+          </article>
+          {{ if $url }}</a>{{ end }}
+        {{ end }}
+      </div>
+    </div>
+  </section>
+  {{ end }}
+</main>
+{{ end }}

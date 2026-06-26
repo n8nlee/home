@@ -1,0 +1,31 @@
+{{ define "main" }}
+<main class="page-main pa4" role="main">
+  <section class="blog-intro mw8 center tc mb5">
+    <h2 class="f2 f1-ns lh-solid center fw4">{{ .Title | markdownify }}</h2>
+    {{ with .Description }}<p class="research-intro f4 mt4 lh-copy center">{{ . | markdownify }}</p>{{ end }}
+    {{ with .Params.profile_links }}
+    <div class="research-profile-links flex flex-wrap justify-center mt4">
+      {{ range . }}
+        {{ $pack := or .icon_pack "fas" }}
+        {{ $pack_prefix := $pack }}
+        {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+          {{ $pack_prefix = "fa" }}
+        {{ end }}
+        <a class="research-profile-link link dib ttu tracked f6 fw6 ma2 pv2 ph3" href="{{ .url | safeURL }}" target="_blank" rel="noopener">
+          <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }} fa-fw mr2"></i>{{ .label }}
+        </a>
+      {{ end }}
+    </div>
+    {{ end }}
+    {{ with .Params.lab_statement }}<p class="research-lab-statement f4 mt4 lh-copy center">{{ . | markdownify }}</p>{{ end }}
+    {{ if .Params.show_author_byline }}<p class="f7 measure lh-copy tc center i">{{ if .Params.author }}Written by {{ .Params.author }}{{ end }}</p>{{ end }}
+  </section>
+  <section class="blog-content mw8 center">
+    {{ $caller := . }}
+    {{ $pages := .RegularPages.ByWeight }}
+      {{ range $pages }}
+        {{ partial "research/summary" (dict "page" . "root" $caller) }}
+      {{ end }}
+  </section>
+</main>
+{{ end }}

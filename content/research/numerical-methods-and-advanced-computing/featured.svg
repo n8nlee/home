@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+  <title id="title">Placeholder image for Project 2</title>
+  <desc id="desc">Abstract research illustration with a granular field and measured response lines.</desc>
+  <defs>
+    <linearGradient id="bg-p2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#89f7fe" />
+      <stop offset="100%" stop-color="#66a6ff" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg-p2)" />
+  <g fill="#eef8ff" opacity="0.92">
+    <circle cx="170" cy="315" r="22" />
+    <circle cx="235" cy="270" r="24" />
+    <circle cx="310" cy="325" r="20" />
+    <circle cx="385" cy="280" r="25" />
+    <circle cx="460" cy="335" r="22" />
+    <circle cx="535" cy="290" r="24" />
+    <circle cx="610" cy="340" r="21" />
+  </g>
+  <g stroke="#1d4e89" stroke-width="8" fill="none" opacity="0.85">
+    <path d="M110 160 C200 120, 260 210, 350 180 S520 120, 690 185" />
+    <path d="M110 210 C210 180, 260 260, 350 235 S520 175, 690 240" />
+  </g>
+  <text x="60" y="440" font-family="Arial, sans-serif" font-size="56" font-weight="700" fill="#1d4e89">Project 2</text>
+</svg>

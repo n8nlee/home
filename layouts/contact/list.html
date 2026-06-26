@@ -1,0 +1,14 @@
+{{ define "main" }}
+<main class="page-main pa4" role="main">
+  <section class="page-content mw8 center">
+    <header class="mb5">
+      <h2 class="f2 f1-ns lh-solid tc center fw4">{{ .Title | markdownify }}</h2>
+      {{ with .Description }}<p class="f4 measure lh-copy tc center">{{ . | markdownify }}</p>{{ end }}
+      {{ if .Params.show_author_byline }}<p class="f7 measure lh-copy tc center i">{{ if .Params.author }}Written by {{ .Params.author }}{{ end }}</p>{{ end }}
+    </header>
+    <section class="page-body">
+      {{ .Content }}
+    </section>
+  </section>
+</main>
+{{ end }}

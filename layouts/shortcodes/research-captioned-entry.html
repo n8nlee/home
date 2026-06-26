@@ -1,0 +1,12 @@
+{{ $imageName := .Get "image" }}
+{{ $image := .Page.Resources.GetMatch $imageName }}
+{{ $src := cond (ne $image nil) $image.RelPermalink ($imageName | relURL) }}
+<div class="research-entry-with-caption">
+  <figure class="research-image-with-caption">
+    <img src="{{ $src }}" alt="{{ .Get "alt" }}">
+    <figcaption>{{ .Get "caption" | markdownify }}</figcaption>
+  </figure>
+  <div class="research-entry-text">
+    {{ .Inner | markdownify }}
+  </div>
+</div>
