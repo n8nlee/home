@@ -17,7 +17,7 @@ action_label: "Read More &rarr;"
 action_type: text # text, button
 news_heading: "Latest News"
 news_items:
-  - date: "June 1, 2026"
+  - date: "August 1st, 2026"
     title: "The website has been launched."
     description: "It aims to showcase ongoing research, highlight key achievements, and provide a platform to share new findings with the broader community."
     url: ""

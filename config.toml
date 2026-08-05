@@ -2,7 +2,7 @@ baseURL = "/"
 theme = "hugo-apero"
 languageCode = "en"
 title = "Personal Website of Seung Jae Lee"
-author = "Seung Jae Lee"
+author = "Nathan Lee"
 copyright = "" # set to override the auto generated copyright using org info and now year
 googleAnalytics = ""
 disqusShortname = ""
@@ -28,7 +28,7 @@ enableEmoji = true
     style = "github"
     
 [params]
-  orgName = "Seung Jae Lee"
+  orgName = "Nathan Lee"
   orgLocal = ""
   description = "A modern, beautiful, and easily configurable blog theme for Hugo."
   favicon = "/img/favicon.ico?v=20260606"
@@ -110,13 +110,13 @@ enableEmoji = true
     url = "/about/"
     weight = 2
   [[menu.header]]
-    name = "Research"
-    title = "Research"
+    name = "Extracurricular"
+    title = "Extracurricular"
     url = "/research/"
     weight = 4
   [[menu.header]]
-    name = "Service"
-    title = "Service"
+    name = "Volunteer Activities"
+    title = "Volunteer Activities"
     url = "/service/"
     weight = 6
   [[menu.header]]
