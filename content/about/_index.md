@@ -36,9 +36,36 @@ A significant portion of my work focuses on developing new computational paradig
 
 ## Honors & Awards
 
-- FIU Summer Research Enhancement Award, 2026
-- FIU Faculty Senate Award for Excellence in Service, 2025
-- FIU Rewarding Excellence in Teaching Incentives (RETI) Award, 2024
-- Editor's Choice Award, ASCE Journal of Architectural Engineering, June 2023
-- Ralph E. Powe Junior Faculty Enhancement Award, 2016
-- Top 25 Hottest Articles, Computers and Geotechnics (Elsevier), 2012
+**James M. Johnston Scholar**  
+University of North Carolina at Chapel Hill  
+June 2026
+
+- Awarded a full-ride merit scholarship in recognition of outstanding academic achievement.
+- Selected among the top 1% of admitted students.
+
+**2x AIME Qualifier with Distinction**  
+Mathematical Association of America  
+2023, 2024
+
+- Qualified for the American Invitational Mathematics Examination (AIME) in two consecutive years.
+- Ranked among the top 2.5% of more than 350,000 AMC participants nationwide.
+
+**TOPIK II Level 5 (Advanced Korean Proficiency)**  
+National Institute for International Education (South Korea)
+
+- Certified advanced proficiency in Korean.
+- Demonstrates professional, academic, and cross-cultural communication skills in Korean.
+
+**Volunteer Service Award**  
+Charles W. Flanagan High School  
+2025
+
+- Recognized for exceptional commitment to community service and volunteer leadership.
+- Awarded for completing more than 650 volunteer hours in support of local and international communities.
+
+**Winner - KSEA National Mathematics & Science Competition**  
+Korean-American Scientists and Engineers Association (KSEA)  
+April 2025
+
+- First Place, 11th Grade Mathematics Division.
+- Recognized for outstanding achievement in the national mathematics competition hosted by KSEA.
